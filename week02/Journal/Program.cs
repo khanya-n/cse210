@@ -1,5 +1,9 @@
-using System;
-
+/// <summary> 
+/// Added a way to save journal data into a JSON file and load journal data
+/// from a JSON file.
+/// 
+/// Author: Khanya Nyathikazi
+/// </summary>
 class Program
 {
     static void Main(string[] args)
@@ -36,6 +40,7 @@ class Program
                     _entryText = entryText
                 };
                 journal.AddEntry(entry);
+                Console.WriteLine("Your entry has been written.");
             }
             else if (option == 2)
             {
@@ -43,11 +48,13 @@ class Program
             }
             else if (option == 3)
             {
-                journal.LoadFromFile("");
+                journal.LoadFromFile("journal.json");
+                Console.WriteLine("Your saved data has been loaded.");
             }
             else if (option == 4)
             {
-                journal.SaveToFile("");
+                journal.SaveToFile("journal.json");
+                Console.WriteLine("Your journal has been saved.");
             }
             else if (option == 5)
             {
