@@ -1,3 +1,7 @@
+/// <summary>
+/// Used https://zetcode.com/csharp/json/ to learn how to read and write to JSON files
+/// </summary>
+
 using System.Text.Json;
 
 public class Journal
