@@ -47,4 +47,30 @@ public class Scripture
 
         return true;
     }
+
+    private Word SelectRandomWord()
+    {
+        Random random = new Random();
+        int randomWordIndex = random.Next(0, _words.Count);
+        
+        return _words[randomWordIndex];
+    }
+
+    public void HideWords()
+    {
+        bool continueSearch = true;
+        do
+        {
+            Word firstWord = SelectRandomWord();
+            Word secondWord = SelectRandomWord();
+            if (!firstWord.IsHidden() && !secondWord.IsHidden())
+            {
+                firstWord.Hide();
+                secondWord.Hide();
+                continueSearch = false;
+            }
+        }
+
+        while (continueSearch);
+    }
 }
