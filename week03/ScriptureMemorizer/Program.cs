@@ -25,6 +25,7 @@ class Program
             else
             {
                 scripture.HideWords();
+                Console.Clear();
             }
         }
         while (!isFinished);
