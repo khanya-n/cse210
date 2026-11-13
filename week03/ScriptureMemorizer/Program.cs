@@ -1,3 +1,9 @@
+/// <summary>
+/// Added the ability to load scriptures from a CSV file and only hide words that
+/// are not already hidden.
+/// </summary>
+/// Author: Khanya Nyathikazi
+
 using System;
 
 class Program
