@@ -22,24 +22,27 @@ public class FileReader
             string verse = reader.Parse<string>(2);
             string text = reader.Parse<string>(3);
 
-            Reference reference;
-
-            if (verse.Contains('-'))
-            {
-                string[] splitVerse = verse.Split("-");
-                int start = int.Parse(splitVerse[0]);
-                int end = int.Parse(splitVerse[1]);
-                reference = new Reference(book, chapter, start, end);
-            }
-            else
-            {
-                int verseNum = int.Parse(verse);
-                reference = new Reference(book, chapter, verseNum);
-            }
+            Reference reference = CreateReference(book, chapter, verse);
 
             scriptures.Add(new Scripture(reference, text));
         }
 
         return scriptures;
+    }
+
+    private Reference CreateReference(string book, int chapter, string verse)
+    {
+        if (verse.Contains('-'))
+        {
+            string[] splitVerse = verse.Split("-");
+            int start = int.Parse(splitVerse[0]);
+            int end = int.Parse(splitVerse[1]);
+            return new Reference(book, chapter, start, end);
+        }
+        else
+        {
+            int verseNumber = int.Parse(verse);
+            return new Reference(book, chapter, verseNumber);
+        }
     }
 }
