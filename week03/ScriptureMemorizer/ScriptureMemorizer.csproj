@@ -12,4 +12,8 @@
     <PackageReference Include="CsvHelper" Version="34.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="scriptures.csv" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>
