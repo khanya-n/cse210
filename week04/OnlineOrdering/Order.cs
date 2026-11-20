@@ -18,6 +18,15 @@ public class Order
             total += product.GetTotalCost();
         }
 
+        if (_customer.IsFromUSA())
+        {
+            total += 5;
+        }
+        else
+        {
+            total += 35;
+        }
+
         return total;
     }
 
