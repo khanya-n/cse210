@@ -32,11 +32,11 @@ public class Order
 
     public string GetPackagingLabel()
     {
-        string label = "ID\tName\tQuantity\n";
+        string label = "ID\tName\t\t\tQuantity\n";
 
         foreach (Product product in _products)
         {
-            label += $"{product.GetID()}\t{product.GetName()}\t{product.GetQuantity()}\n";
+            label += $"{product.GetID()}\t{product.GetName()}\t\t{product.GetQuantity()}\n";
         }
 
         return label;
