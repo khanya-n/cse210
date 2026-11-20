@@ -37,5 +37,6 @@ public class Video
         Console.WriteLine($"{_title}\t{_length}s");
         Console.WriteLine($"by {_author}\n");
         DisplayComments();
+        Console.WriteLine();
     }
 }
