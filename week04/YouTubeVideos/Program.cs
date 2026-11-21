@@ -7,6 +7,7 @@ class Program
         Video albumsVideo = new Video("My Top 10 Albums of All Time", "Michael", 1032);
         Video challengeVideo = new Video("Pokemon Nuzlocke Challenge (GONE WRONG)", "Andre", 1256);
         Video vlogVideo = new Video("My First Day In London", "Devi", 974);
+        List<Video> videos = [albumsVideo, challengeVideo, vlogVideo];
 
         albumsVideo.AddComment(new Comment("Ian", "Some crazy picks here. HUge respect, though."));
         albumsVideo.AddComment(new Comment("Thando", "Loved #4. It really takes me back to my high school days."));
@@ -20,8 +21,9 @@ class Program
         vlogVideo.AddComment(new Comment("Ray", "You should try some chicken tikka masala. It's probably the one British dish I actually enjoy lol."));
         vlogVideo.AddComment(new Comment("Dani", "I always forget that England isn't always so grey."));
 
-        albumsVideo.DisplayVideo();
-        challengeVideo.DisplayVideo();
-        vlogVideo.DisplayVideo();
+        foreach (Video video in videos)
+        {
+            video.DisplayVideo();
+        }
     }
 }
